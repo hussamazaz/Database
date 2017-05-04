@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 28, 2017 at 05:50 PM
+-- Generation Time: May 04, 2017 at 09:11 AM
 -- Server version: 5.7.15-log
 -- PHP Version: 5.6.26
 
@@ -41,14 +41,7 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`car_id`, `user_id`, `car_name`, `car_plate`, `car_model`, `car_company`, `car_odo`) VALUES
-(1, 1, '1', '1', 1, '1', 1),
-(2, 1, '1', '1', 1, '1', 1),
-(3, 1, '1', '2', 3, '4', 5),
-(4, 1, '1', '1', 1, '1', 1),
-(6, 1594025, 'Corola', 'USB3840', 2011, 'Toyota', 200),
-(7, 1, 'Corola', 'USB3840', 2011, 'Toyota', 200),
-(8, 1, 'Corola', 'USB3840', 2011, 'Toyota', 200),
-(9, 1, 'Corola', 'USB3840', 2011, 'Toyota', 200);
+(27, 1594025, 'Corola', '3840', 2011, 'Toyota', 200000);
 
 -- --------------------------------------------------------
 
@@ -90,7 +83,7 @@ CREATE TABLE `maintenance` (
 --
 
 INSERT INTO `maintenance` (`main_id`, `user_id`, `car_id`, `reserve_date`, `main_datestart`, `main_status`, `main_dateend`, `main_timestart`, `main_type`, `main_comm`, `main_cost`) VALUES
-(1111, 1594025, 1, '', 2017, 0, 2018, 8, 'Fixx', 'machine is damage sholde be changing another new one ... ', '5000$');
+(1114, 1594025, 27, '', 0, 6, 0, 0, '1', '', '');
 
 -- --------------------------------------------------------
 
@@ -113,9 +106,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_nickname`, `user_name`, `user_password`, `user_email`, `user_type`, `user_mobile`) VALUES
-(1, 'noon', 'noon', 'noon', '', 0, 0),
-(1594025, 'Mr.7usoom', 'Hussam', '123123', 'mr.7usoom@hotmail.com', 123123, 559992215),
-(1594026, 'noon', 'Anan', '12345678', 'ananqadi@gmail.com', 1, 502572023);
+(1, 'Admin', 'Admin', '0000', '', 2, 0),
+(11111, 'hhh', 'ali', '0000', 'jhhhhhh', 2, 555),
+(1594025, 'Mr.7usoom', 'Hussam', '1234', 'mr.7usoom@hotmail.com', 1, 559992215),
+(1594026, 'noon', 'Anan', '1234', 'ananqadi@gmail.com', 1, 502572023);
 
 --
 -- Indexes for dumped tables
@@ -146,7 +140,8 @@ ALTER TABLE `maintenance`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_name` (`user_name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -156,22 +151,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `car_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `car_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `maintenance`
 --
 ALTER TABLE `maintenance`
-  MODIFY `main_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1112;
+  MODIFY `main_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1115;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1594027;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1594031;
 --
 -- Constraints for dumped tables
 --
